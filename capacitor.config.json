@@ -1,0 +1,16 @@
+{
+  "appId": "com.azkar.muslim.companion",
+  "appName": "Azkar Al Muslim Companion",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "buildOptions": {
+      "keystorePath": "release-key.keystore",
+      "keystorePassword": "your_keystore_password",
+      "keystoreAlias": "key0",
+      "keystoreAliasPassword": "your_alias_password"
+    }
+  }
+}

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 40% 96%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 147 27% 40%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 199 39% 38%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 45 30% 91%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 147 27% 40%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 45 40% 97%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 147 27% 40%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 45 30% 91%;
+    --sidebar-ring: 147 27% 40%;
+  }
+
+  .dark {
+    --background: 142 14% 16%;
+    --foreground: 210 40% 98%;
+
+    --card: 142 14% 16%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 142 14% 16%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 147 27% 40%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 199 39% 38%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 147 25% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 147 25% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 147 25% 25%;
+    --input: 147 25% 25%;
+    --ring: 147 27% 50%;
+    --sidebar-background: 142 14% 16%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 147 27% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 147 25% 20%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 147 25% 25%;
+    --sidebar-ring: 147 27% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen;
+  }
+
+  .arabic-text {
+    @apply font-arabic text-right leading-relaxed;
+    direction: rtl;
+  }
+
+  .font-arabic {
+    font-family: 'Scheherazade New', 'Amiri', serif;
+  }
+
+  .tasbih-button {
+    @apply bg-islamic-green/90 hover:bg-islamic-green rounded-full flex items-center justify-center shadow-lg transition-all duration-300 active:scale-95 active:shadow-md;
+  }
+
+  /* Removed .pattern-bg class definition. Use bg-islamic-pattern from tailwind.config.ts if needed. */
+
+  .category-card {
+    @apply relative overflow-hidden bg-black border border-gray-800 rounded-lg p-4 flex flex-col items-center justify-center text-center;
+  }
+
+  .azkar-card {
+    @apply bg-black text-white rounded-lg p-6 my-4;
+  }
+
+  .counter-badge {
+    @apply bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-mono;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.animate-fade-in-down {
+  animation: fade-in-down 0.5s;
+}

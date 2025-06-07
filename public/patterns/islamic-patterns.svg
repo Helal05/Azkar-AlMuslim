@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <!-- Islamic Pattern 1: Geometric Star -->
+  <pattern id="islamic-pattern-1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M20 0L25 15L40 20L25 25L20 40L15 25L0 20L15 15Z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+
+  <!-- Islamic Pattern 2: Arabesque -->
+  <pattern id="islamic-pattern-2" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M25 0C25 15 40 25 50 25C40 25 25 35 25 50C25 35 10 25 0 25C10 25 25 15 25 0Z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+
+  <!-- Islamic Pattern 3: Interlaced Circles -->
+  <pattern id="islamic-pattern-3" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+    <circle cx="30" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+    <circle cx="0" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+    <circle cx="60" cy="30" r="20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+    <circle cx="30" cy="0" r="20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+    <circle cx="30" cy="60" r="20" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+
+  <!-- Islamic Pattern 4: Geometric Hexagons -->
+  <pattern id="islamic-pattern-4" x="0" y="0" width="30" height="52" patternUnits="userSpaceOnUse">
+    <path d="M15 0L30 8.66V26L15 34.66L0 26V8.66L15 0z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+    <path d="M15 17.32L30 26V43.34L15 52L0 43.34V26L15 17.32z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+
+  <!-- Islamic Pattern 5: Floral Motif -->
+  <pattern id="islamic-pattern-5" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M20 0C25 10 30 15 40 20C30 25 25 30 20 40C15 30 10 25 0 20C10 15 15 10 20 0Z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+
+  <!-- Islamic Pattern 6: Eight-Pointed Star -->
+  <pattern id="islamic-pattern-6" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M25 0L30 20L50 25L30 30L25 50L20 30L0 25L20 20Z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+
+  <!-- Islamic Pattern 7: Curved Lattice -->
+  <pattern id="islamic-pattern-7" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M0 20C10 20 20 10 20 0C20 10 30 20 40 20C30 20 20 30 20 40C20 30 10 20 0 20Z" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+
+  <!-- Islamic Pattern 8: Geometric Weave -->
+  <pattern id="islamic-pattern-8" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+    <path d="M0 15H30M15 0V30M0 0L30 30M30 0L0 30" stroke="currentColor" stroke-width="0.5" opacity="0.2" fill="none"/>
+  </pattern>
+</svg>
