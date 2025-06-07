@@ -550,7 +550,12 @@ export const AppSettingsProvider: React.FC<{ children: ReactNode }> = ({ childre
           // Allow fallback to Web API by not returning false here
         }
       } catch (error: any) {
-        console.error("Capacitor Geolocation error:", error, "Falling back to Web API if available.");
+        // Check if this is the expected "Not implemented on web" error
+        if (error && error.message && error.message.includes("Not implemented on web")) {
+          console.log("Capacitor Geolocation error:", error.message, "Falling back to Web API if available.");
+        } else {
+          console.error("Capacitor Geolocation error:", error, "Falling back to Web API if available.");
+        }
         // Allow fallback to Web API by not returning false here
       }
     }
