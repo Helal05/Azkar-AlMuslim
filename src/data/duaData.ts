@@ -10,7 +10,7 @@ export interface Dua {
   times?: number;
 }
 
-export interface DuaCategory {
+interface DuaCategory {
   id: string;
   name: string;
   backgroundColor: string;
@@ -265,7 +265,7 @@ export const naturalBackgrounds = [
 ];
 
 // Add more Quranic verses
-export const quranVerses = [
+const quranVerses = [
   {
     verse: "إِنَّ اللَّهَ عَلِيمٌ خَبِيرٌ",
     surah: "الحجرات",

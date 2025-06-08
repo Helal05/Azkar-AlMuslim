@@ -1,6 +1,6 @@
 // Types from the new alert system (arab-alert-system-main)
 
-export interface PrayerTime {
+interface PrayerTime {
   id: string;
   name: string; // English name? Seems unused in alert-settings.ts
   nameArabic: string;
@@ -17,7 +17,7 @@ export interface AlertSound {
   // Removed 'selected' as it's not part of the data model, but runtime state
 }
 
-export interface AlertTime {
+interface AlertTime {
   id: string;
   name: string; // Name of the timing option (e.g., "نصف ساعة بعد الفجر")
   timeText: string; // Display text for the time (e.g., "عند الساعة 05:10 صباحًا")

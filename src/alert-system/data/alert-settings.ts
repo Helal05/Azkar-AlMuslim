@@ -1,6 +1,6 @@
 import { AlertSetting, AlertTime } from "../types";
 
-export const morningTimesArabic: AlertTime[] = [
+const morningTimesArabic: AlertTime[] = [
   {
     id: "morning-30min",
     name: "نصف ساعة بعد الفجر",
@@ -24,7 +24,7 @@ export const morningTimesArabic: AlertTime[] = [
   }
 ];
 
-export const duhaTimesArabic: AlertTime[] = [
+const duhaTimesArabic: AlertTime[] = [
   {
     id: "duha-20min",
     name: "20 دقيقة بعد الشروق (بداية وقت الضحى)",

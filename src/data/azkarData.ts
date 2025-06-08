@@ -12,7 +12,7 @@ export interface AzkarItem {
   note?: string; // Added note for additional commentary
 }
 
-export interface AzkarCategory {
+interface AzkarCategory {
   id: string;
   name: string;
   icon: string;

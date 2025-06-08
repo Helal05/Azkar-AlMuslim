@@ -52,7 +52,7 @@ interface ToggleSettingProps {
   showArrow?: boolean;
 }
 
-export const ToggleSetting: React.FC<ToggleSettingProps> = ({
+const ToggleSetting: React.FC<ToggleSettingProps> = ({
   title,
   enabled,
   onChange,

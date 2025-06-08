@@ -35,7 +35,7 @@ export const CALCULATION_METHODS: { [key: string]: string } = {
 };
 
 // Geographic regions for automatic method selection
-export const GEOGRAPHIC_REGIONS: { [key: string]: string } = {
+const GEOGRAPHIC_REGIONS: { [key: string]: string } = {
   // Middle East
   'المملكة العربية السعودية': 'UmmAlQura', // Saudi Arabia
   'الإمارات العربية المتحدة': 'Dubai', // UAE
@@ -140,7 +140,7 @@ export const getCalculationParams = (methodName: string): adhan.CalculationParam
 /**
  * Enhanced prayer times calculation with additional accuracy parameters
  */
-export interface PrayerCalculationOptions {
+interface PrayerCalculationOptions {
   method: string;
   madhab?: 'Shafi' | 'Hanafi';
   highLatitudeRule?: 'MiddleOfTheNight' | 'SeventhOfTheNight' | 'TwilightAngle';
@@ -163,7 +163,7 @@ export interface PrayerCalculationOptions {
  * @param language Language for formatting ('ar' or 'en')
  * @returns Array of prayer times with names and next prayer indicator
  */
-export const getPrayerTimes = (
+const getPrayerTimes = (
   latitude: number,
   longitude: number,
   options: PrayerCalculationOptions | string,
@@ -276,7 +276,7 @@ export const getPrayerTimes = (
  * @param offsetMinutes Minutes after sunrise (default: 15)
  * @returns Calculated Duha time
  */
-export const calculateDuhaTime = (sunrise: Date, dhuhr: Date, offsetMinutes: number = 15): Date => {
+const calculateDuhaTime = (sunrise: Date, dhuhr: Date, offsetMinutes: number = 15): Date => {
   // Duha time is typically between sunrise and dhuhr
   // Default is 15 minutes after sunrise, but can be customized
   const duhaTime = addMinutes(sunrise, offsetMinutes);
@@ -298,7 +298,7 @@ export const calculateDuhaTime = (sunrise: Date, dhuhr: Date, offsetMinutes: num
  * @param fajrNextDay Fajr prayer time of the next day
  * @returns Calculated Last Third of the Night time
  */
-export const calculateLastThirdOfNight = (maghrib: Date, fajrNextDay: Date): Date => {
+const calculateLastThirdOfNight = (maghrib: Date, fajrNextDay: Date): Date => {
   // Calculate the duration of the night in milliseconds
   const nightDurationMillis = fajrNextDay.getTime() - maghrib.getTime();
 
@@ -310,7 +310,7 @@ export const calculateLastThirdOfNight = (maghrib: Date, fajrNextDay: Date): Dat
 };
 
 // Get time until next prayer
-export const getTimeToNextPrayer = (latitude: number, longitude: number, method: string, language: 'ar' | 'en') => {
+const getTimeToNextPrayer = (latitude: number, longitude: number, method: string, language: 'ar' | 'en') => {
   // Validate coordinates
   if (isNaN(latitude) || isNaN(longitude)) {
     console.error("Invalid coordinates provided to getTimeToNextPrayer:", { latitude, longitude });
@@ -343,7 +343,7 @@ export const getTimeToNextPrayer = (latitude: number, longitude: number, method:
 };
 
 // Get current Islamic date
-export const getCurrentIslamicDate = (language: 'ar' | 'en' = 'ar') => {
+const getCurrentIslamicDate = (language: 'ar' | 'en' = 'ar') => {
   const today = new Date();
   const islamicDate = new Intl.DateTimeFormat(language === 'ar' ? 'ar-SA-u-ca-islamic' : 'en-u-ca-islamic', {
     day: 'numeric',
@@ -367,7 +367,7 @@ export const getCurrentIslamicDate = (language: 'ar' | 'en' = 'ar') => {
  * @param language Language for formatting ('ar' or 'en')
  * @returns Array of daily prayer times for the current month
  */
-export const getMonthlyPrayerTimes = (latitude: number, longitude: number, method: string, language: 'ar' | 'en') => {
+const getMonthlyPrayerTimes = (latitude: number, longitude: number, method: string, language: 'ar' | 'en') => {
   // Validate coordinates
   if (isNaN(latitude) || isNaN(longitude)) {
     console.error("Invalid coordinates provided to getMonthlyPrayerTimes:", { latitude, longitude });
@@ -576,7 +576,7 @@ export const formatTimeForDisplay = (time: Date, language: 'ar' | 'en'): string 
 /**
  * Interface for prayer time adjustments
  */
-export interface PrayerTimeAdjustments {
+interface PrayerTimeAdjustments {
   fajr: number;
   sunrise: number;
   dhuhr: number;
@@ -592,7 +592,7 @@ export interface PrayerTimeAdjustments {
  * @param adjustments Adjustments in minutes for each prayer
  * @returns New prayer times object with adjustments applied
  */
-export const applyPrayerTimeAdjustments = (
+const applyPrayerTimeAdjustments = (
   prayerTimes: adhan.PrayerTimes,
   adjustments: PrayerTimeAdjustments
 ): adhan.PrayerTimes => {
@@ -659,7 +659,7 @@ export const getPrayerTimesWithAdjustments = (
  * @param userPreferences Optional user preferences to override defaults
  * @returns Enhanced prayer calculation options
  */
-export const createEnhancedPrayerOptions = (
+const createEnhancedPrayerOptions = (
   country: string,
   latitude: number,
   longitude: number,
@@ -703,7 +703,7 @@ export const createEnhancedPrayerOptions = (
  * @param madhab Madhab name ('Shafi' or 'Hanafi')
  * @returns Asr prayer time
  */
-export const calculateAsrTime = (
+const calculateAsrTime = (
   coordinates: adhan.Coordinates,
   date: Date,
   params: adhan.CalculationParameters,

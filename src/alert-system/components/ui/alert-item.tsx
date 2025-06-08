@@ -67,7 +67,7 @@ export function AlertItem({
   );
 }
 
-export function AlertItemWithCheck({ text, selected, onClick }: AlertItemProps) {
+function AlertItemWithCheck({ text, selected, onClick }: AlertItemProps) {
   return (
     <div
       className="flex items-center justify-between p-4 border-b border-gray-800 hover:bg-gray-800/50 cursor-pointer"

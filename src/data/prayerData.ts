@@ -4,13 +4,13 @@ import { calculatePrayerTimes, formatPrayerTime } from '../utils/adhanUtils';
 import { getCurrentHijriDate, getHijriDateForGregorian, toArabicNumerals } from '../utils/hijriUtils';
 import { getCompleteLocationData } from '../utils/locationUtils';
 
-export interface PrayerTime {
+interface PrayerTime {
   name: string;
   time: string;
   isNext?: boolean;
 }
 
-export interface IslamicDate {
+interface IslamicDate {
   day: string;
   month: string;
   year: string;
@@ -21,14 +21,14 @@ export interface IslamicDate {
   yearNumber?: number;
 }
 
-export interface ForbiddenPrayerTime {
+interface ForbiddenPrayerTime {
   description: string;
   timeRange: string;
   descriptionEn?: string;
   timeRangeEn?: string;
 }
 
-export interface LocationInfo {
+interface LocationInfo {
   city: string;
   country: string;
   latitude: number;
@@ -46,7 +46,7 @@ export const getCurrentIslamicDate = (language: string = 'ar'): IslamicDate => {
 };
 
 // Get location information for the user
-export const getUserLocation = async (): Promise<LocationInfo> => {
+const getUserLocation = async (): Promise<LocationInfo> => {
   try {
     const locationData = await getCompleteLocationData();
     return locationData;
@@ -229,7 +229,7 @@ export const getForbiddenPrayerTimes = (): ForbiddenPrayerTime[] => {
 };
 
 // Updated to accept location and method
-export const getTimeToNextPrayer = (
+const getTimeToNextPrayer = (
   latitude: number,
   longitude: number,
   method: string,
@@ -322,7 +322,7 @@ export const getTimeToNextPrayer = (
 };
 
 // Get prayer times for a specific date
-export const getPrayerTimesForDate = (
+const getPrayerTimesForDate = (
   date: Date,
   latitude: number,
   longitude: number,
@@ -373,7 +373,7 @@ export const getPrayerTimesForDate = (
 };
 
 // Get Hijri date for a specific date
-export const getIslamicDateForDate = (date: Date = new Date(), language: string = 'ar'): IslamicDate => {
+const getIslamicDateForDate = (date: Date = new Date(), language: string = 'ar'): IslamicDate => {
   return getHijriDateForGregorian(date, language);
 };
 

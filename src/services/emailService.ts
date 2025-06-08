@@ -97,7 +97,7 @@ export const validateEmailConfig = () => {
 };
 
 // أنواع الرسائل للمساعدة في التصنيف
-export const MESSAGE_TYPES = {
+const MESSAGE_TYPES = {
   general: {
     ar: 'استفسار عام',
     en: 'General Inquiry'

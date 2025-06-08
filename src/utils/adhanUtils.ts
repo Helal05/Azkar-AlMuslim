@@ -24,7 +24,7 @@ export interface PrayerCalculationParams {
  * @param methodName Name of the calculation method
  * @returns Calculation method parameters
  */
-export const getCalculationMethod = (methodName: string = 'UmmAlQura') => {
+const getCalculationMethod = (methodName: string = 'UmmAlQura') => {
   switch (methodName) {
     case 'MWL':
       return CalculationMethod.MuslimWorldLeague();
@@ -60,7 +60,7 @@ export const getCalculationMethod = (methodName: string = 'UmmAlQura') => {
  * @param madhabName Name of the madhab (Shafi or Hanafi)
  * @returns Madhab parameter
  */
-export const getMadhab = (madhabName: string = 'Shafi') => {
+const getMadhab = (madhabName: string = 'Shafi') => {
   return madhabName === 'Hanafi' ? Madhab.Hanafi : Madhab.Shafi;
 };
 
@@ -69,7 +69,7 @@ export const getMadhab = (madhabName: string = 'Shafi') => {
  * @param ruleName Name of the high latitude rule
  * @returns High latitude rule parameter
  */
-export const getHighLatitudeRule = (ruleName: string = 'MiddleOfTheNight') => {
+const getHighLatitudeRule = (ruleName: string = 'MiddleOfTheNight') => {
   switch (ruleName) {
     case 'MiddleOfTheNight':
       return HighLatitudeRule.MiddleOfTheNight;
@@ -129,7 +129,7 @@ export const calculatePrayerTimes = (
  * @param minute Minute (0-59)
  * @returns Formatted time string in Arabic
  */
-export const formatArabicTime = (hour: number, minute: number): string => {
+const formatArabicTime = (hour: number, minute: number): string => {
   const period = hour < 12 ? 'ص' : 'م';
   const h = hour % 12 || 12;
   
@@ -153,7 +153,7 @@ export const formatArabicTime = (hour: number, minute: number): string => {
  * @param minute Minute (0-59)
  * @returns Formatted time string in English
  */
-export const formatEnglishTime = (hour: number, minute: number): string => {
+const formatEnglishTime = (hour: number, minute: number): string => {
   const period = hour < 12 ? 'AM' : 'PM';
   const h = hour % 12 || 12;
   // Ensure minutes are padded with leading zero if needed

@@ -1,4 +1,4 @@
-export interface PrayerTime {
+interface PrayerTime {
   id: string;
   name: string;
   nameArabic: string;

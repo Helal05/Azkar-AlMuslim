@@ -17,7 +17,7 @@ export interface HijriDate {
 }
 
 // Hijri month names in Arabic and English
-export const hijriMonths = {
+const hijriMonths = {
   ar: [
     "محرم",
     "صفر",
@@ -49,7 +49,7 @@ export const hijriMonths = {
 };
 
 // Day names in Arabic and English
-export const weekDays = {
+const weekDays = {
   ar: ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
   en: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 };
@@ -98,24 +98,24 @@ export const getHijriDateForGregorian = (gregorianDate: Date, language: string =
 };
 
 // Get Hijri month name
-export const getHijriMonthName = (monthNumber: number, language: string = 'ar'): string => {
+const getHijriMonthName = (monthNumber: number, language: string = 'ar'): string => {
   // Adjust for 0-based index
   const index = ((monthNumber - 1) % 12 + 12) % 12;
   return hijriMonths[language][index];
 };
 
 // Calculate number of days in a Hijri month
-export const getDaysInHijriMonth = (year: number, month: number): number => {
+const getDaysInHijriMonth = (year: number, month: number): number => {
   return moment(`${year}-${month}-1`, 'iYYYY-iM-iD').iDaysInMonth();
 };
 
 // Convert Hijri date to Gregorian date
-export const convertToGregorian = (hijriYear: number, hijriMonth: number, hijriDay: number): Date => {
+const convertToGregorian = (hijriYear: number, hijriMonth: number, hijriDay: number): Date => {
   return moment(`${hijriYear}-${hijriMonth}-${hijriDay}`, 'iYYYY-iM-iD').toDate();
 };
 
 // Calculate age in Hijri years
-export const calculateHijriAge = (birthDate: Date): number => {
+const calculateHijriAge = (birthDate: Date): number => {
   const currentHijri = convertToHijri(new Date());
   const birthHijri = convertToHijri(birthDate);
   
@@ -131,7 +131,7 @@ export const calculateHijriAge = (birthDate: Date): number => {
 };
 
 // Important Islamic dates
-export const importantIslamicDates = {
+const importantIslamicDates = {
   ar: {
     '1-1': 'رأس السنة الهجرية',
     '1-10': 'يوم عاشوراء',
@@ -163,7 +163,7 @@ export const importantIslamicDates = {
 };
 
 // Check if today is an important Islamic date
-export const getTodayIslamicEvent = (language: string = 'ar'): string | null => {
+const getTodayIslamicEvent = (language: string = 'ar'): string | null => {
   const today = convertToHijri();
   const key = `${today.monthNumber}-${today.dayNumber}`;
   return importantIslamicDates[language][key] || null;

@@ -3,7 +3,7 @@
  */
 
 // Interface for location data
-export interface LocationData {
+interface LocationData {
   city: string;
   country: string;
   governorate?: string; // Add governorate field
@@ -20,7 +20,7 @@ export interface LocationData {
  * @param timeout Timeout in milliseconds (default: 20000)
  * @returns Promise with location coordinates
  */
-export const getCurrentLocation = (
+const getCurrentLocation = (
   highAccuracy: boolean = true,
   timeout: number = 20000
 ): Promise<GeolocationCoordinates> => {
@@ -68,7 +68,7 @@ export const getCurrentLocation = (
  * @param longitude Longitude coordinate
  * @returns Promise with location data including city and country
  */
-export const reverseGeocode = async (latitude: number, longitude: number): Promise<LocationData> => {
+const reverseGeocode = async (latitude: number, longitude: number): Promise<LocationData> => {
   try {
     // Using OpenStreetMap Nominatim API for reverse geocoding
     const response = await fetch(
@@ -121,7 +121,7 @@ export const reverseGeocode = async (latitude: number, longitude: number): Promi
  * @param longitude Longitude coordinate
  * @returns Promise with elevation in meters
  */
-export const getElevation = async (latitude: number, longitude: number): Promise<number> => {
+const getElevation = async (latitude: number, longitude: number): Promise<number> => {
   try {
     const response = await fetch(
       `https://api.open-elevation.com/api/v1/lookup?locations=${latitude},${longitude}`

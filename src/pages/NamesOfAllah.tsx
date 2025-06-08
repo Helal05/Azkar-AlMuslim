@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppSettings } from "../contexts/AppSettingsContext";
 import { useToast } from "../hooks/use-toast"; // Corrected import path
 
-export interface Name {
+interface Name {
   id: string;
   name: string;
   meaning: string;

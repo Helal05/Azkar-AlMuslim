@@ -26,7 +26,7 @@ const HARDCODED_DEFAULT_SOUND_ID = "adhan-makkah1"; // Match the one in alert-co
  * Checks if notification permissions have been granted.
  * @returns {Promise<boolean>} True if permission is granted, false otherwise.
  */
-export const checkNotificationPermission = async (): Promise<boolean> => {
+const checkNotificationPermission = async (): Promise<boolean> => {
   // On web, permissions are handled differently or not applicable for standard notifications
   if (!Capacitor.isNativePlatform()) {
     console.log("Notification permissions check skipped on web.");
@@ -574,7 +574,7 @@ export const schedulePrayerNotifications = async (
 /**
  * Cancels all previously scheduled native local notifications.
  */
-export const cancelAllNotifications = async (): Promise<void> => {
+const cancelAllNotifications = async (): Promise<void> => {
    if (!Capacitor.isNativePlatform()) {
     console.log("Native notification cancellation skipped on web.");
     return;

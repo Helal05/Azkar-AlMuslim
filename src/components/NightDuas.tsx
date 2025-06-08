@@ -21,11 +21,6 @@ const NightDuas: React.FC = () => {
     return hour >= 19 || hour < 5;
   };
 
-  // If it's not night time, don't render the component
-  if (!isNightTime()) {
-    return null;
-  }
-
   const getRandomDua = (): Dua | undefined => {
     if (nightDuas.length === 0) return undefined;
     const randomIndex = Math.floor(Math.random() * nightDuas.length);
@@ -33,6 +28,11 @@ const NightDuas: React.FC = () => {
   };
   
   const [currentDua, setCurrentDua] = React.useState<Dua | undefined>(getRandomDua());
+
+  // Move the conditional return after all hooks have been called
+  if (!isNightTime()) {
+    return null;
+  }
 
   const changeDua = () => {
     let newDua = getRandomDua();
